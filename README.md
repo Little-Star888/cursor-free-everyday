@@ -5,7 +5,7 @@
 完全免费的 Cursor 助手工具，提供以下功能：
 - 一键获取新额度
 - 自动满额度账号
-<img width="524" height="486" alt="image" src="https://github.com/user-attachments/assets/1aa44b59-78a1-4f44-8764-3159e39100cb" />
+<img width="244" alt="image" src="https://github.com/user-attachments/assets/1aa44b59-78a1-4f44-8764-3159e39100cb" />
 
 
 ## 加入QQ群获取最新下载,交流学习
