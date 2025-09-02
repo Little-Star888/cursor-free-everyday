@@ -9,7 +9,7 @@
 
 
 ## 加入QQ群获取最新下载,交流学习
-<img src="https://github.com/user-attachments/assets/29496235-54c8-4f24-aa54-6cc1d1a77f6f" width="300"  height="300" alt="QQ群二维码">
+<img src="https://github.com/user-attachments/assets/53f85a4c-6264-4beb-89fb-11b0307650cb" width="300"  height="300" alt="QQ群二维码">
 
 ### 支持 Windows、Mac系统
 
