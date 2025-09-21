@@ -5,6 +5,7 @@
 完全免费的 Cursor 助手工具，提供以下功能：
 - 一键获取新额度
 - 自动满额度账号
+- 支持claude等高级模型使用
 
   ### 支持 Windows、Mac系统,软件截图
 <img width="354" height="386" alt="image" src="https://github.com/user-attachments/assets/e4a50f7b-d0e3-48dc-8010-6d5ae12a9234" />
