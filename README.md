@@ -10,8 +10,8 @@
   ### 支持 Windows、Mac系统,软件截图
 <table>
   <tr>
-    <td><img width="354" height="386" alt="image" src="https://github.com/user-attachments/assets/e4a50f7b-d0e3-48dc-8010-6d5ae12a9234" /></td>
-    <td><img width="960" height="938" alt="a53ae860982068af41b93ec717851a8e" src="https://github.com/user-attachments/assets/03493179-f59a-4d5a-b203-f002d18bb0ae" /></td>
+    <td><img width="400" alt="image" src="https://github.com/user-attachments/assets/e4a50f7b-d0e3-48dc-8010-6d5ae12a9234" /></td>
+    <td><img width="400" alt="a53ae860982068af41b93ec717851a8e" src="https://github.com/user-attachments/assets/03493179-f59a-4d5a-b203-f002d18bb0ae" /></td>
   </tr>
 </table>
 
