@@ -16,7 +16,7 @@
 </table>
 
 ## 加入QQ群获取最新下载,交流学习
-<img src="https://github.com/user-attachments/assets/53f85a4c-6264-4beb-89fb-11b0307650cb" width="300"  height="300" alt="QQ群二维码">
+<img width="571" height="640" alt="image" src="https://github.com/user-attachments/assets/15ae2152-4a10-45fc-aad2-eeeae486bcd7" />
 
 
 ## 声明
