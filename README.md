@@ -1,7 +1,4 @@
 # CursorPro 助手
-
-## 简介
-
 ## 轻松一键续杯 Cursor Pro，支持使用20美元Pro会员账号
 ## 【支持Claude 4.5及MAX、GPT 5等会员模型】 【免费使用】
 
