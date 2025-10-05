@@ -1,11 +1,9 @@
-# Cursor 免费助手
+# CursorPro 助手
 
 ## 简介
 
-完全免费的 Cursor 助手工具，提供以下功能：
-- 一键获取新额度
-- 自动满额度账号
-- 支持claude等高级模型使用
+## 轻松一键续杯 Cursor Pro，支持使用20美元Pro会员账号
+## 【支持Claude 4.5及MAX、GPT 5等会员模型】 【免费使用】
 
   ### 支持 Windows、Mac系统,软件截图
 <table>
