@@ -11,7 +11,7 @@
 </table>
 
 ## 加入QQ群获取最新下载,交流学习
-<img width="571" height="640" alt="image" src="https://github.com/user-attachments/assets/15ae2152-4a10-45fc-aad2-eeeae486bcd7" />
+<img width="529" height="650" alt="image" src="https://github.com/user-attachments/assets/1194aabd-8c2c-4514-bed1-8be10278c088" />
 
 
 ## 声明
