@@ -1,6 +1,9 @@
 # CursorPro 助手
 ## 轻松一键续杯 Cursor Pro
 
+## 加入QQ群获取最新下载,交流学习
+<img width="529" height="650" alt="image" src="https://github.com/user-attachments/assets/1194aabd-8c2c-4514-bed1-8be10278c088" />
+
   ### 支持 Windows、Mac系统,软件截图
 <table>
   <tr>
@@ -8,10 +11,6 @@
     <td><img width="400" alt="a53ae860982068af41b93ec717851a8e" src="https://github.com/user-attachments/assets/03493179-f59a-4d5a-b203-f002d18bb0ae" /></td>
   </tr>
 </table>
-
-## 加入QQ群获取最新下载,交流学习
-<img width="529" height="650" alt="image" src="https://github.com/user-attachments/assets/1194aabd-8c2c-4514-bed1-8be10278c088" />
-
 
 ## 声明
 
