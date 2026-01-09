@@ -1,5 +1,5 @@
 # CursorPro 助手
-## 轻松一键续杯 Cursor Pro
+## 轻松一键续杯 Cursor kiro windsurf,多合一
 
 ## 加入QQ群获取最新下载,交流学习
 <img width="529" height="650" alt="image" src="https://github.com/user-attachments/assets/1194aabd-8c2c-4514-bed1-8be10278c088" />
