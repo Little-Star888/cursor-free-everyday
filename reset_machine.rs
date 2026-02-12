@@ -11,8 +11,6 @@ use std::path::{Path, PathBuf};
 use std::process::{Command, Stdio};
 use sysinfo::{System};
 use uuid::Uuid;
-use winreg::enums::*;
-use winreg::RegKey;
 use chrono::Local;
 use rand::{thread_rng, Rng, distributions::Alphanumeric};
 
@@ -195,14 +193,6 @@ fn main() {
     // println!("Generated MACHINE_ID: {}", machine_id);
     // println!("Generated SQM_ID: {}", sqm_id);
     // println!("");
-
-    // Update MachineGuid in registry
-    let mut machine_guid_updated = false;
-    if cfg!(target_os = "windows") { // Only run on Windows
-        machine_guid_updated = update_machine_guid(&backup_dir_path);
-    } else {
-        println!("{} Skipping MachineGuid update (not on Windows)", "[INFO]".color(YELLOW));
-    }
 
     // Create or update configuration file
     println!("{} Updating configuration...", "[INFO]".color(GREEN));
@@ -387,101 +377,6 @@ fn close_cursor_process(process_name: &str) {
             std::thread::sleep(std::time::Duration::from_secs(WAIT_TIME_SECONDS));
         }
         println!("{} {} successfully closed", "[INFO]".color(GREEN), process_name);
-    }
-}
-
-#[cfg(target_os = "windows")]
-fn update_machine_guid(backup_dir: &Path) -> bool {
-    println!("{} Updating MachineGuid in registry...", "[INFO]".color(GREEN));
-    let hklm = RegKey::predef(HKEY_LOCAL_MACHINE);
-    let reg_path = "SOFTWARE\\Microsoft\\Cryptography";
-    let reg_key_name = "MachineGuid";
-    let full_reg_key_path_for_export = "HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Cryptography";
-
-    let crypto_key = match hklm.open_subkey_with_flags(reg_path, KEY_READ | KEY_WRITE) {
-        Ok(key) => key,
-        Err(e) => {
-            println!("{} Failed to open registry key '{}': {}. Ensure you have admin rights.", "[ERROR]".color(RED), reg_path, e);
-            return false;
-        }
-    };
-
-    let current_guid_val: Result<String, _> = crypto_key.get_value(reg_key_name);
-    let original_guid = match current_guid_val {
-        Ok(guid) => {
-            println!("{} Current registry value:", "[INFO]".color(GREEN));
-            println!("  {}", full_reg_key_path_for_export);
-            println!("    {}    REG_SZ    {}", reg_key_name, guid);
-            guid
-        }
-        Err(e) => {
-            println!("{} Unable to get current {}: {}. This might indicate a problem or the value might not exist.", "[ERROR]".color(RED), reg_key_name, e);
-            // Proceeding to set a new one if it doesn't exist, or fail if it's a permission issue.
-            String::new() // Or handle as a more critical error if needed.
-        }
-    };
-
-    if !backup_dir.exists() {
-        if let Err(e) = fs::create_dir_all(backup_dir) {
-            println!("{} Failed to create backup directory for registry backup: {}. Proceeding without registry backup.", "[WARNING]".color(YELLOW), e);
-        }
-    }
-
-    let backup_file_name = format!("MachineGuid_{}.reg", Local::now().format("%Y%m%d_%H%M%S"));
-    let backup_file_path = backup_dir.join(&backup_file_name);
-    let backup_command_str = format!("reg.exe export \"{}\" \"{}\" /y", full_reg_key_path_for_export, backup_file_path.display());
-    
-    println!("{} Attempting to backup registry key to: {:?}", "[INFO]".color(GREEN), backup_file_path);
-    match Command::new("cmd").args(&["/C", &backup_command_str]).status() {
-        Ok(status) if status.success() => {
-            println!("{} Registry key backed up successfully.", "[INFO]".color(GREEN));
-        }
-        Ok(status) => {
-            println!("{} Registry backup command finished with status: {}. Check permissions or if reg.exe is available.", "[WARNING]".color(YELLOW), status);
-        }
-        Err(e) => {
-            println!("{} Failed to execute registry backup command: {}. Proceeding with caution.", "[WARNING]".color(YELLOW), e);
-        }
-    }
-
-    let new_guid = Uuid::new_v4().to_string();
-    match crypto_key.set_value(reg_key_name, &new_guid) {
-        Ok(_) => {
-            println!("{} Registry value {} set to: {}", "[INFO]".color(GREEN), reg_key_name, new_guid);
-            // Verification
-            let verify_guid: Result<String, _> = crypto_key.get_value(reg_key_name);
-            match verify_guid {
-                Ok(val) if val == new_guid => {
-                    println!("{} Registry update verified successfully.", "[INFO]".color(GREEN));
-                    println!("  {}", full_reg_key_path_for_export);
-                    println!("    {}    REG_SZ    {}", reg_key_name, new_guid);
-                    true
-                }
-                Ok(val) => {
-                    println!("{} Registry verification failed: Updated value ({}) does not match expected value ({}).", "[ERROR]".color(RED), val, new_guid);
-                    // Attempt restore
-                    false // Placeholder for restore logic
-                }
-                Err(e) => {
-                    println!("{} Failed to verify registry update: {}.", "[ERROR]".color(RED), e);
-                    false // Placeholder for restore logic
-                }
-            }
-        }
-        Err(e) => {
-            println!("{} Failed to set registry value {}: {}.", "[ERROR]".color(RED), reg_key_name, e);
-            // Attempt restore if original_guid was present and backup_file_path exists
-            if !original_guid.is_empty() && backup_file_path.exists() {
-                println!("{} Attempting to restore registry from backup: {:?}", "[YELLOW]".color(YELLOW), backup_file_path);
-                let restore_command_str = format!("reg.exe import \"{}\"", backup_file_path.display());
-                match Command::new("cmd").args(&["/C", &restore_command_str]).status() {
-                    Ok(status) if status.success() => println!("{} Registry restored successfully from backup.", "[INFO]".color(GREEN)),
-                    Ok(status) => println!("{} Registry restore command failed with status: {}. Manual restore may be needed from {:?}", "[ERROR]".color(RED), status, backup_file_path),
-                    Err(re) => println!("{} Failed to execute registry restore command: {}. Manual restore needed from {:?}", "[ERROR]".color(RED), re, backup_file_path),
-                }
-            }
-            false
-        }
     }
 }
 

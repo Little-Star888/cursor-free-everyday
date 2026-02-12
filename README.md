@@ -1,21 +1,45 @@
-# 轻松一键续杯 ,同时支持 Cursor , kiro , windsurf 无限额度使用
+<div align="center">
 
-## 加入QQ群获取最新下载,交流学习
-<img width="529" height="650" alt="image" src="https://github.com/user-attachments/assets/1194aabd-8c2c-4514-bed1-8be10278c088" />
+# 轻松一键续杯
 
-  ### 支持 Windows、Mac系统,软件截图
+**同时支持 Cursor / Kiro / Windsurf 无限额度使用**
+
+[![Download](https://img.shields.io/badge/下载最新版本-点击这里-blue?style=for-the-badge&logo=github)](https://os.suiyuee.top/)
+
+---
+
+### 加入 QQ 群获取最新下载，交流学习
+
+<img width="260" alt="QQ群二维码" src="https://github.com/user-attachments/assets/1194aabd-8c2c-4514-bed1-8be10278c088" />
+
+</div>
+
+---
+
+## 软件截图
+
+> 支持 Windows、macOS 系统
+
 <table>
   <tr>
-    <td><img width="400" alt="image" src="https://github.com/user-attachments/assets/e4a50f7b-d0e3-48dc-8010-6d5ae12a9234" /></td>
-    <td><img width="400" alt="a53ae860982068af41b93ec717851a8e" src="https://github.com/user-attachments/assets/03493179-f59a-4d5a-b203-f002d18bb0ae" /></td>
+    <td align="center"><b>Windows</b></td>
+    <td align="center"><b>macOS</b></td>
+  </tr>
+  <tr>
+    <td><img width="400" alt="Windows截图" src="https://github.com/user-attachments/assets/e4a50f7b-d0e3-48dc-8010-6d5ae12a9234" /></td>
+    <td><img width="400" alt="macOS截图" src="https://github.com/user-attachments/assets/03493179-f59a-4d5a-b203-f002d18bb0ae" /></td>
   </tr>
 </table>
 
+---
+
 ## 声明
 
-本项目仅供学习交流使用，请勿用于商业用途。
+> [!WARNING]
+> - 本项目仅供学习交流使用，请勿用于商业用途。
+> - 本项目不承担任何法律责任，使用本项目造成的任何后果，由使用者自行承担。
 
-本项目不承担任何法律责任，使用本项目造成的任何后果，由使用者自行承担。
+---
 
 ## 特别鸣谢
 
