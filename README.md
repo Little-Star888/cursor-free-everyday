@@ -2,7 +2,7 @@
 
 # 轻松一键续杯
 
-**同时支持 Cursor 无限额度使用**
+**同时支持 Cursor、windsurf、kiro、codex无限额度使用**
 
 [![Download](https://img.shields.io/badge/下载最新版本-点击这里-blue?style=for-the-badge&logo=github)](https://os.suiyuee.top/)
 
