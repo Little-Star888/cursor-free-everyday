@@ -8,7 +8,7 @@
 
 ---
 
-### 加入 QQ 群获取最新下载，交流学习
+### 扫码加 QQ 群(不要搜索群号), 获取最新下载，交流学习
 
 <img width="260" alt="QQ群二维码" src="https://github.com/user-attachments/assets/1194aabd-8c2c-4514-bed1-8be10278c088" />
 
